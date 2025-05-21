@@ -17,7 +17,7 @@ export const LoginForm: React.FC = () => {
   const { login, isLoading, error } = useAuth();
   const [showPassword, setShowPassword] = React.useState(false);
   const navigate = useNavigate();
-  
+
   const {
     register,
     handleSubmit,
@@ -41,19 +41,19 @@ export const LoginForm: React.FC = () => {
   return (
     <div className="w-full flex items-center justify-center relative overflow-hidden">
       {/* Animated background shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[800px] h-[800px] bg-[#1A1F4D]/30 rounded-full -top-1/2 -left-1/4 blur-3xl animate-float animate-move-x-slow"></div>
-        <div className="absolute w-[600px] h-[600px] bg-[#242957]/30 rounded-full -bottom-1/4 -right-1/4 blur-2xl animate-float animate-move-y-fast"></div>
-        <div className="absolute w-[500px] h-[500px] bg-[#2E346C]/30 rounded-full top-1/4 left-1/4 blur-xl animate-float animate-move-x-fast"></div>
-        <div className="absolute w-[450px] h-[450px] bg-[#383E81]/30 rounded-full bottom-1/3 right-1/3 blur-xl animate-float animate-move-y-slow"></div>
-        <div className="absolute w-[300px] h-[300px] bg-[#424896]/30 rounded-full top-1/3 right-1/4 blur-lg animate-float animate-move-x"></div>
-        <div className="absolute w-[250px] h-[250px] bg-[#4C52AB]/30 rounded-full bottom-1/4 left-1/3 blur-lg animate-float animate-move-y"></div>
+      <div className="fixed inset-0">
+        <div className="absolute w-[1200px] h-[1200px] bg-[#1A1F4D]/30 rounded-full -top-1/3 -left-1/4 blur-3xl animate-float animate-move-x-slow"></div>
+        <div className="absolute w-[900px] h-[900px] bg-[#242957]/30 rounded-full -bottom-1/3 -right-1/4 blur-2xl animate-float animate-move-y-fast"></div>
+        <div className="absolute w-[800px] h-[800px] bg-[#2E346C]/30 rounded-full top-1/4 left-1/4 blur-xl animate-float animate-move-x-fast"></div>
+        <div className="absolute w-[700px] h-[700px] bg-[#383E81]/30 rounded-full bottom-1/3 right-1/3 blur-xl animate-float animate-move-y-slow"></div>
+        <div className="absolute w-[600px] h-[600px] bg-[#424896]/30 rounded-full top-1/3 right-1/4 blur-lg animate-float animate-move-x"></div>
+        <div className="absolute w-[500px] h-[500px] bg-[#4C52AB]/30 rounded-full bottom-1/4 left-1/3 blur-lg animate-float animate-move-y"></div>
       </div>
 
-      <div className="max-w-md w-full mx-4 relative">
-        <div className="bg-[#2A2E43]/60 backdrop-blur-md rounded-[10px] p-8 shadow-xl">
+      <div className="max-w-sm w-full mx-4 relative">
+        <div className="bg-[#2A2E43]/60 backdrop-blur-md rounded-[10px] p-6 shadow-xl">
           <div className="text-center mb-8">
-            <div className="w-64 mx-auto mb-6 relative transition-all duration-500 hover:scale-105">
+            <div className="w-48 mx-auto mb-6 relative transition-all duration-500 hover:scale-105">
               <img
                 src="https://raw.githubusercontent.com/Nefta11/MiPortafolioNefta/refs/heads/main/assets/esporaNew.png"
                 alt="Logo"
@@ -80,7 +80,7 @@ export const LoginForm: React.FC = () => {
                 <input
                   id="username"
                   {...register("username")}
-                  className="w-full bg-[#2A2E43]/40 border border-gray-600/30 text-white rounded-lg px-10 py-3 
+                  className="w-full bg-[#2A2E43]/40 border border-gray-600/30 text-white rounded-lg px-10 py-2.5 
                     focus:outline-none focus:border-gray-500/50
                     transition-all duration-300 ease-in-out placeholder-gray-500
                     hover:border-gray-500/50"
@@ -103,7 +103,7 @@ export const LoginForm: React.FC = () => {
                   id="password"
                   type={showPassword ? 'text' : 'password'}
                   {...register("password")}
-                  className="w-full bg-[#2A2E43]/40 border border-gray-600/30 text-white rounded-lg px-10 py-3
+                  className="w-full bg-[#2A2E43]/40 border border-gray-600/30 text-white rounded-lg px-10 py-2.5
                     focus:outline-none focus:border-gray-500/50
                     transition-all duration-300 ease-in-out placeholder-gray-500
                     hover:border-gray-500/50"
@@ -133,8 +133,8 @@ export const LoginForm: React.FC = () => {
                 />
                 <span className="text-sm text-gray-400 group-hover:text-white transition-colors">Recordarme</span>
               </label>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 ¿Olvidaste tu contraseña?
@@ -144,7 +144,7 @@ export const LoginForm: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#2A2E43]/80 hover:bg-[#2A2E43] text-white rounded-lg py-3 font-medium
+              className="w-full bg-[#2A2E43]/80 hover:bg-[#2A2E43] text-white rounded-lg py-2.5 font-medium
                 transition-all duration-300 ease-in-out
                 disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -167,7 +167,7 @@ export const LoginForm: React.FC = () => {
                   {["admin", "sales", "ssc", "strategy", "studies", "accompaniment", "management", "production", "diffusion"].map((username) => (
                     <span
                       key={username}
-                      className="px-2 py-1 bg-[#2A2E43]/40 rounded-md font-medium text-white border border-gray-600/30"
+                      className="px-1.5 py-0.5 bg-[#2A2E43]/40 rounded text-xs font-medium text-white border border-gray-600/30"
                     >
                       {username}
                     </span>
